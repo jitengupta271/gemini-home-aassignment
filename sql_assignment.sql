@@ -2,7 +2,7 @@ All the Queries has written using Postgres syntax.
 
 -- What is the 52 week high and low for all the items traded in the past 3 months?
 
--- Assumtion: Low and high price has been asked.
+-- Assumption: Low and high price has been asked.
 
 with tarded_symbol as (
 select 
@@ -27,7 +27,7 @@ where
 
 -- What is the high/low price/volume in the past 2 hours?
 
--- Assumtion: I am assuming that data is required by symbol low/high and candle data which has volume column, it provides vollume for the candle time frame.
+-- Assumption: I am assuming that data is required by symbol low/high and candle data which has volume column, it provides vollume for the candle time frame.
 
 select 
 		symbol,
@@ -43,7 +43,7 @@ group by symbol
 
 -- What is the volume for a given timeframe?
 
--- Assumtion: I am assuming that it's required by symbol. The candle data which has volume column, it provides vollume for the candle time frame.
+-- Assumption: I am assuming that it's required by symbol. The candle data which has volume column, it provides vollume for the candle time frame.
 
 select
 		symbol,
@@ -57,7 +57,7 @@ group by symbol;
 -- Monthly, quarterly and yearly volume for items that have 10 million+ in volume over the past year 
 -- (Make assumption that you have also downloaded data for multiple trade pairs).
 
--- Assumtion: I am assuming that it's sale volume which has been derived from Trade data.
+-- Assumption: I am assuming that it's sale volume which has been derived from Trade data.
 
 with sysmbol_more_than_10_million as (
 select
